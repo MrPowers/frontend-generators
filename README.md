@@ -1,38 +1,63 @@
-# Frontend::Generators
+# FrontendGenerators
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/frontend/generators`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The FrontendGenerators gem lets you easily copy the Bootstrap & Font Awesome css, js, and fonts directly into your application.  Most people use [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails) and [font-awesome-rails](https://github.com/bokmann/font-awesome-rails) to access these frontend libraries in their code, but I find it much easier to just have the code in my own applications.  It's easier to examine the source code when it's in your application and you can avoid frusterating Rails asset pipeline bugs with this straightforward setup.  Annoying bugs are what motivated me to create this gem in the first place.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (the `require: false` part is important):
 
 ```ruby
-gem 'frontend-generators'
+gem 'frontend-generators', require: false
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Update your `Rakefile` with this code:
 
-    $ gem install frontend-generators
+```ruby
+require "frontend_generators"
+load 'tasks/add_assets.rake'
+```
 
-## Usage
+## Moving Bootstrap Code to Your Application
 
-TODO: Write usage instructions here
+To move the Bootstrap files into your Rails application, run this rake task:
 
-## Development
+```ruby
+bundle exec rake add_assets:bootstrap
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Go to `application.css` and add this line:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```css
+*= require bootstrap
+```
+
+Go to `application.js` and add this line:
+
+```javascript
+//= require bootstrap
+```
+
+## Moving Font-Awesome Code to Your Application
+
+To move the Font-Awesome files into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:font_awesome
+```
+
+Go to `application.css` and add this line:
+
+```css
+*= require font_awesome
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/frontend-generators.
+Bug reports and pull requests are welcome on GitHub at https://github.com/MrPowers/frontend-generators.
 
 
 ## License
