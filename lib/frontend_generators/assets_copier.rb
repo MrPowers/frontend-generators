@@ -12,7 +12,7 @@ module FrontendGenerators; class AssetsCopier
   def copy_assets
     local_assets.each do |local_asset_path|
       d = destination_asset_dirname(local_asset_path)
-      p "Copying #{local_asset_path} to #{d}"
+      p "Copying #{File.basename(local_asset_path)} to #{d}"
       FileUtils.mkdir_p(d)
       copy_asset(local_asset_path)
     end
