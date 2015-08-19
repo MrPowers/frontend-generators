@@ -12,4 +12,10 @@ namespace :add_assets do
     copier.copy_assets
   end
 
+  desc "Add stylish_portfolio to your project"
+  task :stylish_portfolio do
+    copier = FrontendGenerators::AssetsCopier.new("assets/stylish_portfolio/")
+    copier.copy_assets
+  end
+
 end
