@@ -23,7 +23,7 @@ module FrontendGenerators; class Bootstrap
   end
 
   def root
-    File.expand_path("../", File.dirname(__FILE__))
+    File.expand_path("../../", File.dirname(__FILE__))
   end
 
 end; end
