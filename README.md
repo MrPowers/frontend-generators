@@ -55,6 +55,26 @@ Go to `application.css` and add this line:
 *= require font_awesome
 ```
 
+## Moving Start Bootstrap Stylish Portfolio Code to Your Application
+
+To move the [Start Bootstrap Stylish Portfolio](http://ironsummitmedia.github.io/startbootstrap-stylish-portfolio/) into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:stylish_portfolio
+```
+
+Add the route to `routes.rb`:
+
+```ruby
+get 'stylish_portfolios/index'
+```
+
+You may have to go to `config/initializers/assets.rb` and add this line:
+
+```ruby
+Rails.application.config.assets.precompile += %w( stylish_portfolio_manifest.css stylish_portfolio_manifest.js )
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/MrPowers/frontend-generators.
