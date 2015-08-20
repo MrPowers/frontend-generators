@@ -18,4 +18,10 @@ namespace :add_assets do
     copier.copy_assets
   end
 
+  desc "Add Start Bootstrap Creative to your project"
+  task :creative do
+    copier = FrontendGenerators::AssetsCopier.new("assets/creative/")
+    copier.copy_assets
+  end
+
 end
