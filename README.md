@@ -23,7 +23,7 @@ require "frontend_generators"
 load 'tasks/add_assets.rake'
 ```
 
-## Moving Bootstrap Code to Your Application
+## Bootstrap
 
 To move the Bootstrap files into your Rails application, run this rake task:
 
@@ -43,7 +43,9 @@ Go to `application.js` and add this line:
 //= require bootstrap
 ```
 
-## Moving Font-Awesome Code to Your Application
+The fonts are in the `/public/fonts/` directory because [Rails keeps changing where the fonts should be](http://stackoverflow.com/questions/10905905/using-fonts-with-rails-asset-pipeline) and it is annoying to keep up with all the changes.
+
+## Font-Awesome
 
 To move the Font-Awesome files into your Rails application, run this rake task:
 
@@ -57,9 +59,9 @@ Go to `application.css` and add this line:
 *= require font_awesome
 ```
 
-## Moving Start Bootstrap Stylish Portfolio Code to Your Application
+## [Start Bootstrap Stylish Portfolio](http://ironsummitmedia.github.io/startbootstrap-stylish-portfolio/)
 
-To move the [Start Bootstrap Stylish Portfolio](http://ironsummitmedia.github.io/startbootstrap-stylish-portfolio/) into your Rails application, run this rake task:
+To move the Start Bootstrap Stylish Portfolio into your Rails application, run this rake task:
 
 ```ruby
 bundle exec rake add_assets:stylish_portfolio
@@ -74,7 +76,27 @@ get 'stylish_portfolios/index'
 You may have to go to `config/initializers/assets.rb` and add this line:
 
 ```ruby
-Rails.application.config.assets.precompile += %w( stylish_portfolio_manifest.css stylish_portfolio_manifest.js )
+Rails.application.config.assets.precompile += %w( stylish_portfolio/manifest.css stylish_portfolio/manifest.js )
+```
+
+## [Start Bootstrap Creative](http://startbootstrap.com/template-overviews/creative/)
+
+To move the Start Bootstrap Creative into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:creative
+```
+
+Add the route to `routes.rb`:
+
+```ruby
+get 'creatives/index'
+```
+
+You may have to go to `config/initializers/assets.rb` and add this line:
+
+```ruby
+Rails.application.config.assets.precompile += %w( creative/manifest.js creative/manifest.css )
 ```
 
 ## Contributing
