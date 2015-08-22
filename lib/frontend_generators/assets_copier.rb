@@ -12,14 +12,14 @@ module FrontendGenerators; class AssetsCopier
   def copy_assets
     local_assets.each do |local_asset_path|
       d = destination_asset_dirname(local_asset_path)
-      p message(local_asset_path)
+      puts message(local_asset_path)
       FileUtils.mkdir_p(d)
       copy_asset(local_asset_path)
     end
   end
 
   def message(local_asset_path)
-    puts "#{Rainbow("create").green}    #{destination_truncated_path(local_asset_path)}"
+    "#{Rainbow("create").green}    #{destination_truncated_path(local_asset_path)}"
   end
 
   def local_assets_root
