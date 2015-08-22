@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
 
   spec.add_dependency "rainbow", "2.0.0"
+  spec.add_dependency "turf", "0.0.5"
 end

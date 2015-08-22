@@ -4,9 +4,8 @@ module FrontendGenerators; class AssetsCopier
 
   # local_asset_dirname is assets/bootstrap/ or assets/font_awesome/
 
-  def initialize(local_asset_dirname, destination_root = Rails.root)
+  def initialize(local_asset_dirname)
     @local_asset_dirname = local_asset_dirname
-    @destination_root = destination_root
   end
 
   def copy_assets
@@ -23,7 +22,7 @@ module FrontendGenerators; class AssetsCopier
   end
 
   def local_assets_root
-    "#{root}/#{local_asset_dirname}"
+    "#{Turf.find(:root)}/#{local_asset_dirname}"
   end
 
   def local_assets
@@ -31,7 +30,9 @@ module FrontendGenerators; class AssetsCopier
   end
 
   def destination_asset_dirname(local_asset_path)
-    p = local_asset_path.gsub(local_assets_root, destination_root)
+    r = Turf.find(:destination_root)
+    FileUtils.mkdir_p(r)
+    p = local_asset_path.gsub(local_assets_root, r)
     File.dirname(p)
   end
 
@@ -42,14 +43,6 @@ module FrontendGenerators; class AssetsCopier
   def copy_asset(local_asset_path)
     destination = destination_asset_dirname(local_asset_path)
     FileUtils.cp(local_asset_path, destination)
-  end
-
-  def root
-    File.expand_path("../../", File.dirname(__FILE__))
-  end
-
-  def destination_root
-    "#{@destination_root}/"
   end
 
 end; end
