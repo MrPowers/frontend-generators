@@ -1,48 +1,24 @@
 module FrontendGenerators; class AssetsCopier
 
-  attr_reader :local_asset_dirname
+  attr_reader :asset
 
-  # local_asset_dirname is assets/bootstrap/ or assets/font_awesome/
-
-  def initialize(local_asset_dirname)
-    @local_asset_dirname = local_asset_dirname
+  def initialize(asset)
+    @asset = asset
   end
 
   def copy_assets
-    local_assets.each do |local_asset_path|
-      d = destination_asset_dirname(local_asset_path)
-      puts message(local_asset_path)
-      FileUtils.mkdir_p(d)
-      copy_asset(local_asset_path)
+    asset_files.each do |asset_path|
+      copier = AssetCopier.new(asset_path, asset_root_dirname)
+      copier.full_copy
     end
   end
 
-  def message(local_asset_path)
-    "#{Rainbow("create").green}    #{destination_truncated_path(local_asset_path)}"
+  def asset_root_dirname
+    File.join(Turf.find(:root), "assets", asset.to_s)
   end
 
-  def local_assets_root
-    "#{Turf.find(:root)}/#{local_asset_dirname}"
-  end
-
-  def local_assets
-    Dir.glob("#{local_assets_root}**/*").select{|f| File.file?(f)}
-  end
-
-  def destination_asset_dirname(local_asset_path)
-    r = Turf.find(:destination_root)
-    FileUtils.mkdir_p(r)
-    p = local_asset_path.gsub(local_assets_root, r)
-    File.dirname(p)
-  end
-
-  def destination_truncated_path(local_asset_path)
-    local_asset_path.gsub(local_assets_root, "")
-  end
-
-  def copy_asset(local_asset_path)
-    destination = destination_asset_dirname(local_asset_path)
-    FileUtils.cp(local_asset_path, destination)
+  def asset_files
+    Dir.glob("#{asset_root_dirname}/**/*").select{|f| File.file?(f)}
   end
 
 end; end
