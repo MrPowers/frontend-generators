@@ -22,7 +22,7 @@ module FrontendGenerators; class AssetCopier
   end
 
   def destination_dirname
-    p = asset_path.gsub(asset_root_dirname, Turf.find(:destination_root))
+    p = asset_path.gsub(asset_root_dirname, Turf.find(:destination_root).to_s)
     dirname = File.dirname(p)
     FileUtils.mkdir_p(dirname)
     dirname
