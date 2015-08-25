@@ -1,15 +1,15 @@
 # FrontendGenerators
 
-This gem can be used to easily set up a [Start Bootstrap](http://startbootstrap.com/template-categories/all/) theme in your Rails application.  The Start Bootstrap code has fully been modified to follow Rails conventions and it's very easy to customize (Rails partials are awesome!).
+This gem can be used to easily set up a [Start Bootstrap](http://startbootstrap.com/template-categories/all/) theme in your Rails application.  The Start Bootstrap code has fully been modified to follow Rails conventions (Rails partials are awesome!).
 
 The FrontendGenerators gem also lets you easily copy the Bootstrap & Font Awesome css, js, and fonts directly into your application.  Most people use [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails) and [font-awesome-rails](https://github.com/bokmann/font-awesome-rails) to access these frontend libraries in their code, but I find it much easier to just have the code in my own applications.  It's easier to examine the source code when it's in your application and you can avoid frusterating Rails asset pipeline bugs with this straightforward setup.  Annoying bugs are what motivated me to create this gem in the first place.
 
 ## Installation
 
-Add this line to your application's Gemfile (the `require: false` part is important):
+Add this line to your application's Gemfile:
 
 ```ruby
-gem 'frontend-generators', require: false
+gem 'frontend-generators'
 ```
 
 And then execute:
@@ -61,7 +61,7 @@ Go to `application.css` and add this line:
 
 ## [Start Bootstrap Stylish Portfolio](http://ironsummitmedia.github.io/startbootstrap-stylish-portfolio/)
 
-To move the Start Bootstrap Stylish Portfolio into your Rails application, run this rake task:
+To move the Start Bootstrap Stylish Portfolio theme into your Rails application, run this rake task:
 
 ```ruby
 bundle exec rake add_assets:stylish_portfolio
@@ -73,7 +73,7 @@ Add the route to `routes.rb`:
 get 'stylish_portfolios/index'
 ```
 
-You may have to go to `config/initializers/assets.rb` and add this line:
+Add this line to `config/initializers/assets.rb`:
 
 ```ruby
 Rails.application.config.assets.precompile += %w( stylish_portfolio/manifest.css stylish_portfolio/manifest.js )
@@ -81,7 +81,7 @@ Rails.application.config.assets.precompile += %w( stylish_portfolio/manifest.css
 
 ## [Start Bootstrap Creative](http://startbootstrap.com/template-overviews/creative/)
 
-To move the Start Bootstrap Creative into your Rails application, run this rake task:
+To move the Start Bootstrap Creative theme into your Rails application, run this rake task:
 
 ```ruby
 bundle exec rake add_assets:creative
@@ -93,11 +93,32 @@ Add the route to `routes.rb`:
 get 'creatives/index'
 ```
 
-You may have to go to `config/initializers/assets.rb` and add this line:
+Add this line to `config/initializers/assets.rb`:
 
 ```ruby
 Rails.application.config.assets.precompile += %w( creative/manifest.js creative/manifest.css )
 ```
+
+## [Start Bootstrap Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
+
+To move the Start Bootstrap Freelancer theme into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:freelancer
+```
+
+Add the route to `routes.rb`:
+
+```ruby
+get 'freelancers/index'
+```
+
+Add this line to `config/initializers/assets.rb`:
+
+```ruby
+Rails.application.config.assets.precompile += %w( freelancer/manifest.js freelancer/manifest.css )
+```
+
 
 ## Contributing
 

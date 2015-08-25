@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["MrPowers"]
   spec.email         = ["matthewkevinpowers@gmail.com"]
 
-  spec.summary       = %q{Rake tasks to get Bootstrap and Font Awesome code into your Rails application}
-  spec.description   = %q{There are separate Ruby gems to access Bootstrap and Font Awesome in your Rails application, but they can be annoying when it comes time to deploy or when you want to look at the source code.  These rake tasks actually move the source code into your application, so you have full control.}
+  spec.summary       = %q{Rake tasks to get Bootstrap, Font Awesome, and Start Bootstrap themes into your Rails application}
+  spec.description   = %q{There are separate Ruby gems to access Bootstrap and Font Awesome in your Rails application, but they can be annoying when it comes time to deploy or when you want to look at the source code.  These rake tasks actually move the source code into your application, so you have full control.  The rake tasks also make it easy to add Start Bootstrap themes to your site, which can be a pain.}
   spec.homepage      = "https://github.com/MrPowers/frontend-generators"
   spec.license       = "MIT"
 
