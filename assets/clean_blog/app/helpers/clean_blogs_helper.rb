@@ -1,4 +1,4 @@
-module StartbootstrapCleanBlogsHelper
+module CleanBlogsHelper
   # Returns the full title on a per-page basis.
   def full_title(page_title = '')
       base_title = "Clean Blog"
