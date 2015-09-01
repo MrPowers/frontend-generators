@@ -135,7 +135,7 @@ Add the routes to `routes.rb`:
 root 'clean_blogs#index'
 get  'about' 	=> 'clean_blogs#about'
 get  'post' 	=> 'clean_blogs#post'
-get  'contact' => 'clean_blogs#contact'
+get  'contact' 	=> 'clean_blogs#contact'
 ```
 
 Add this line to `config/initializers/assets.rb`:
