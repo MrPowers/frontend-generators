@@ -1,0 +1,61 @@
+<% if current_page?(root_path) %>
+    <header class="intro-header" style="background-image: 
+    url('/assets/clean_blog/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1>
+                    <hr class="small">
+                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+<% elsif current_page?(about_path) %>
+    <header class="intro-header" style="background-image: 
+    url('/assets/clean_blog/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>About Me</h1>
+                    <hr class="small">
+                    <span class="subheading">This is what I do.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+<% elsif current_page?(post_path) %>
+    <header class="intro-header" style="background-image: 
+    url('/assets/clean_blog/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Man must explore, and this is exploration at its greatest</h1>
+                    <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                    <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+<% elsif current_page?(contact_path) %> 
+    <header class="intro-header" style="background-image: 
+    url('/assets/clean_blog/contact-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Contact Me</h1>
+                    <hr class="small">
+                    <span class="subheading">Have questions? I have answers (maybe).</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+<% end %>

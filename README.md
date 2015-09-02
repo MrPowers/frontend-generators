@@ -121,6 +121,28 @@ Add this line to `config/initializers/assets.rb`:
 Rails.application.config.assets.precompile += %w( freelancer/manifest.js freelancer/manifest.css )
 ```
 
+## [Start Bootstrap Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/)
+
+To move the Start Bootstrap Clean Blog theme into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:clean_blog
+```
+
+Add the routes to `routes.rb`:
+
+```ruby
+root 'clean_blogs#index'
+get  'about' 	=> 'clean_blogs#about'
+get  'post' 	=> 'clean_blogs#post'
+get  'contact' 	=> 'clean_blogs#contact'
+```
+
+Add this line to `config/initializers/assets.rb`:
+
+```ruby
+Rails.application.config.assets.precompile += %w( clean_blog/manifest.js clean_blog/manifest.css )
+```
 
 ## Contributing
 
