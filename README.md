@@ -136,7 +136,37 @@ root 'clean_blogs#index'
 get  'about' 	=> 'clean_blogs#about'
 get  'post' 	=> 'clean_blogs#post'
 get  'contact' 	=> 'clean_blogs#contact'
+match  'mail', to: 'clean_blogs#mail', via: 'post'
 ```
+
+Add the correct mail settings depending on the environment.
+For your development environment add the following lines to `config/environments/development.rb`
+to use the :test mail delivery method:
+
+```ruby
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
+config.action_mailer.delivery_method = :test
+```
+
+For your production environment add the following lines to `config/environments/production.rb`
+to use the :smpth delivery method:
+
+```ruby
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.example.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            '<username>',
+  password:             '<password>',
+```
+
+Change the default to mail address on line 3 in `app/mailers/contact_mailer.rb`
+
+Change the default from mail address on line 2 in `app/mailers/application_mailer.rb`
 
 Add this line to `config/initializers/assets.rb`:
 
