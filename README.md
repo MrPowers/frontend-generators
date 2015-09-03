@@ -139,7 +139,7 @@ get  'contact' 	=> 'clean_blogs#contact'
 match  'mail', to: 'clean_blogs#mail', via: 'post'
 ```
 
-Add the correct mail settings depending on the environment.
+Add the correct mail settings depending on the environment.  
 For your development environment add the following lines to `config/environments/development.rb`
 to use the :test mail delivery method:
 
