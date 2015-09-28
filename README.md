@@ -174,6 +174,26 @@ Add this line to `config/initializers/assets.rb`:
 Rails.application.config.assets.precompile += %w( clean_blog/manifest.js clean_blog/manifest.css )
 ```
 
+## [Start Bootstrap Grayscale](http://startbootstrap.com/template-overviews/grayscale/)
+
+To move the Start Bootstrap Grayscale theme into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:grayscale
+```
+
+Add the route to `routes.rb`:
+
+```ruby
+get 'grayscales/index'
+```
+
+Add this line to `config/initializers/assets.rb`:
+
+```ruby
+Rails.application.config.assets.precompile += %w( grayscale/manifest.js grayscale/manifest.css )
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/MrPowers/frontend-generators.
