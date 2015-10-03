@@ -1,5 +1,5 @@
 class GrayscalesController < ApplicationController
   layout "grayscale"
-	def index
-	end
+    def index
+    end
 end
