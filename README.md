@@ -164,6 +164,26 @@ Add this line to `config/initializers/assets.rb`:
 Rails.application.config.assets.precompile += %w( grayscale/manifest.js grayscale/manifest.css )
 ```
 
+## [Start New Age](https://startbootstrap.com/template-overviews/new-age/)
+
+To move the Start Bootstrap New Age theme into your Rails application, run this rake task:
+
+```ruby
+bundle exec rake add_assets:new_age
+```
+
+Add the route to `routes.rb`:
+
+```ruby
+get 'new_ages/index'
+```
+
+Add this line to `config/initializers/assets.rb`:
+
+```ruby
+Rails.application.config.assets.precompile += %w( new_age/manifest.js new_age/manifest.css )
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/MrPowers/frontend-generators.
