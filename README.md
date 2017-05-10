@@ -138,10 +138,10 @@ get  'post' 	=> 'clean_blogs#post'
 get  'contact' 	=> 'clean_blogs#contact'
 ```
 
-Add this line to `config/initializers/assets.rb`:
+Remove this line from `app/assets/stylsheets/application.css`:
 
 ```ruby
-Rails.application.config.assets.precompile += %w( clean_blog/manifest.js clean_blog/manifest.css )
+*= require bootstrap
 ```
 
 ## [Start Bootstrap Grayscale](http://startbootstrap.com/template-overviews/grayscale/)
@@ -192,4 +192,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/MrPowe
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
