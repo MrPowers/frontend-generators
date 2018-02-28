@@ -13,6 +13,11 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'frontend-generators'
 ```
+Rails 5.1 needs
+
+```ruby
+gem 'jquery-rails'
+```
 
 And then execute:
 
@@ -175,7 +180,7 @@ bundle exec rake add_assets:new_age
 Add the route to `routes.rb`:
 
 ```ruby
-get 'new_ages/index'
+get 'new_age/index'
 ```
 
 Add this line to `config/initializers/assets.rb`:
